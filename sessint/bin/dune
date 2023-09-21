@@ -1,0 +1,5 @@
+(executable
+ (public_name sessint)
+ (name main)
+ (libraries logs logs.fmt sessint core_bench core core_unix.command_unix)
+ (modes byte exe))
