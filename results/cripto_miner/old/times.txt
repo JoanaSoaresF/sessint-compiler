@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: cripto_miner_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  150765	      7557 ns/op
+BenchmarkMain-12    	  155611	      7658 ns/op
+BenchmarkMain-12    	  154150	      7824 ns/op
+BenchmarkMain-12    	  152293	      7479 ns/op
+BenchmarkMain-12    	  155168	      7582 ns/op
+PASS
+ok  	cripto_miner_old	6.259s

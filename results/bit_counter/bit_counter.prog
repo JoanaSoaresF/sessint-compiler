@@ -1,0 +1,87 @@
+stype Counter rec x.&{inc:x, val: int^x, halt:@};
+
+bit : int ->{Counter<-d:Counter}
+fun b -> c <- {
+    case c of
+        inc:(
+            if (b=0) then
+                c_ <- spawn (bit 1) d;
+                fwd c_ c
+            else 
+                d.inc;
+                c_ <- spawn (bit 0) d;
+                fwd c_ c
+        ) val : (
+            d.val;
+            n:int <- recv d;
+            send c (2*n+b); 
+            c_ <- spawn (bit b) d;
+            fwd c_ c
+        ) halt: (
+            d.halt;
+            wait d;
+            close c
+        )
+} end;
+
+epsilon : unit ->{Counter}
+fun b -> c <- {
+    case c of
+        inc:(
+            e <- spawn (epsilon ());
+            c_ <- spawn (bit 1) e;
+            fwd c_ c
+        ) val : (
+            send c 0; 
+            c_ <- spawn (epsilon ());
+            fwd c_ c
+        ) halt: (
+            close c
+        )
+} end;
+
+
+
+;; c <- {
+	q <- spawn (epsilon ());
+    q.inc;
+    q.val;
+    x1:int <- recv q;
+    print x1;
+
+    q.inc;
+    q.val;
+    x2:int <- recv q;
+    print x2;
+
+    q.inc;
+    q.val;
+    x3:int <- recv q;
+    print x3;
+
+    q.inc;
+    q.val;
+    x4:int <- recv q;
+    print x4;
+
+    q.inc;
+    q.val;
+    x5:int <- recv q;
+    print x5;
+    
+    q.inc; 
+    q.inc;
+    q.inc;
+    q.inc;
+    q.inc; 
+    q.inc;
+    q.inc;
+    q.inc;
+    q.val;
+    x6:int <- recv q;
+    print x6;
+
+    q.halt;
+    wait q;
+    close c
+};;

@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send-receive-simple_mine-struct
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  205053	      5941 ns/op
+BenchmarkMain-12    	  187888	      6204 ns/op
+BenchmarkMain-12    	  191456	      6043 ns/op
+BenchmarkMain-12    	  192898	      6007 ns/op
+BenchmarkMain-12    	  198028	      6004 ns/op
+PASS
+ok  	send-receive-simple_mine-struct	6.210s

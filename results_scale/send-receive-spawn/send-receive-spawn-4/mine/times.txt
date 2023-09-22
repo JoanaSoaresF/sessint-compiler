@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send-receive-spawn-4_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  366126	      3185 ns/op
+BenchmarkMain-12    	  373861	      3217 ns/op
+BenchmarkMain-12    	  290005	      3491 ns/op
+BenchmarkMain-12    	  312391	      3364 ns/op
+BenchmarkMain-12    	  374737	      3352 ns/op
+PASS
+ok  	send-receive-spawn-4_mine	5.876s

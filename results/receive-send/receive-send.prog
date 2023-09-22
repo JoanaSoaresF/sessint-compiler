@@ -1,0 +1,21 @@
+recv_three : int -> {int => int => int => @}
+fun n -> c <- {
+    a1:int <- recv c;
+    a2:int <- recv c;
+    a3:int <- recv c;
+
+    print (a1+n);
+    print a2;
+    print a3;
+   close c
+}
+end;
+
+;; m <- {
+    e <- spawn (recv_three 1);
+    send e 1;
+   send e 2;
+   send e 3;
+    wait e;
+    close m
+};;

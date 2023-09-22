@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: filter_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	   45836	     26139 ns/op
+BenchmarkMain-12    	   54970	     24917 ns/op
+BenchmarkMain-12    	   53580	     24881 ns/op
+BenchmarkMain-12    	   52993	     23184 ns/op
+BenchmarkMain-12    	   51840	     22415 ns/op
+PASS
+ok  	filter_mine	10.102s

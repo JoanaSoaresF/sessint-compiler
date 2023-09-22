@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: intStack_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	   66672	     18002 ns/op
+BenchmarkMain-12    	   79394	     17459 ns/op
+BenchmarkMain-12    	   75858	     18296 ns/op
+BenchmarkMain-12    	   76306	     16198 ns/op
+BenchmarkMain-12    	   73784	     16653 ns/op
+PASS
+ok  	intStack_mine	10.264s

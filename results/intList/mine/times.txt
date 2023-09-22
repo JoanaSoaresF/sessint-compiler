@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: intList_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	   69166	     16283 ns/op
+BenchmarkMain-12    	   84684	     16296 ns/op
+BenchmarkMain-12    	   82302	     16242 ns/op
+BenchmarkMain-12    	   81074	     17250 ns/op
+BenchmarkMain-12    	   84517	     15195 ns/op
+PASS
+ok  	intList_mine	9.333s

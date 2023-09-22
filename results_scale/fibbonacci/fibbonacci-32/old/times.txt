@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: fibbonacci-32_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	    2402	    481777 ns/op
+BenchmarkMain-12    	    2368	    486549 ns/op
+BenchmarkMain-12    	    2406	    485898 ns/op
+BenchmarkMain-12    	    2448	    485279 ns/op
+BenchmarkMain-12    	    2456	    481220 ns/op
+PASS
+ok  	fibbonacci-32_old	6.107s

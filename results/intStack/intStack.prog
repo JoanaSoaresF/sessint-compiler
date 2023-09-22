@@ -1,0 +1,91 @@
+stype IntStack rec x. &{push: int => x, pop: +{none: unit ^ x, some: int ^ x}, dealloc: @};
+stype IntList rec x. +{null: @, cons: int ^ (x) * @};
+null : unit -> {IntList}
+fun n -> 
+	c <- {
+		c.null;
+		close c
+	}
+end;
+cons : int -> {IntList <- l:IntList}
+fun v -> 
+	c <- {
+		c.cons;
+		send c v;
+		print v;
+		l_ <- spawn { fwd l l_ } l;
+		sendc c l_;
+		close c
+	}
+end;
+dealloc : unit -> {@ <- l:IntList}
+fun v ->
+c <- {
+	case l of 
+	null:(
+		wait l; 
+		close c
+	)
+	cons:(
+		n:int <- recv l; 
+		l_:IntList <- recvc l; 
+		wait l; 
+		d <- spawn (dealloc ()) l_;
+		fwd d c
+	)
+ }
+end;
+stack : unit -> {IntStack <- l:IntList}
+fun n -> 
+	c <- {
+		case c of
+		push: (
+			v:int <- recv c;
+			l_ <- spawn (cons v) l;
+			d <- spawn (stack ()) l_;
+			fwd d c
+		)
+		pop: (
+			case l of
+			null: (
+				wait l;
+				c.none;
+				send c ();
+				l_ <- spawn (null ());
+				d <- spawn (stack ()) l_;
+				fwd d c
+			)
+			cons: (
+				v:int <- recv l;
+				l_:IntList <- recvc l;
+				wait l;
+				c.some;
+				send c v;
+				d <- spawn (stack ()) l_;
+				fwd d c
+			)
+		)
+		dealloc: (
+			d <- spawn (dealloc ()) l;
+			fwd d c
+		)
+	}
+end;
+;; c <- {
+	l <- spawn (null ());
+	s <- spawn (stack ()) l;
+	s.push; send s 1;
+	s.push; send s 2;
+	s.pop;
+	case s of
+	none:(
+		v:unit <- recv s;
+		s.dealloc; wait s;
+		close c
+	)
+	some:(
+		u:int <- recv s;
+		s.dealloc; wait s;
+		close c
+	)
+};;

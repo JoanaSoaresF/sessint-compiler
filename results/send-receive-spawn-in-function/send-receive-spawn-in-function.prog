@@ -1,0 +1,42 @@
+send_three : int -> {int ^ int ^ int ^ @}
+fun n -> c <- {
+    d <- spawn {
+        v1:int <- recv d;
+		v2:int <- recv d;
+		v3:int <- recv d;
+
+        send d v1;
+		send d v2;
+		send d v3;
+
+        close d
+       
+    };
+   send d n;
+   send d (n+1);
+   send d (n+2);
+
+   v1:int <- recv d;
+   v2:int <- recv d;
+   v3:int <- recv d;
+    
+   send c v1;
+   send c v2;
+   send c v3;
+   
+   wait d;
+   close c
+}
+end;
+
+;; m <- {
+    e <- spawn (send_three 1);
+    a1:int <- recv e;
+    a2:int <- recv e;
+    a3:int <- recv e;
+    print a1;
+    print a2;
+    print a3;
+    wait e;
+    close m
+};;

@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send_receive_separated_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  190028	      6199 ns/op
+BenchmarkMain-12    	  193092	      6194 ns/op
+BenchmarkMain-12    	  188730	      6217 ns/op
+BenchmarkMain-12    	  191233	      6279 ns/op
+BenchmarkMain-12    	  191158	      6232 ns/op
+PASS
+ok  	send_receive_separated_old	6.266s

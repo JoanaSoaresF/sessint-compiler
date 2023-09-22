@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: a-2_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  230998	      5023 ns/op
+BenchmarkMain-12    	  235626	      5263 ns/op
+BenchmarkMain-12    	  218413	      5436 ns/op
+BenchmarkMain-12    	  222541	      5201 ns/op
+BenchmarkMain-12    	  235069	      5033 ns/op
+PASS
+ok  	a-2_old	6.204s

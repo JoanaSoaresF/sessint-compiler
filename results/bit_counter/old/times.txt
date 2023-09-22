@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: bit_counter_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	    4873	    224790 ns/op
+BenchmarkMain-12    	    4881	    224900 ns/op
+BenchmarkMain-12    	    5222	    239029 ns/op
+BenchmarkMain-12    	    5280	    229830 ns/op
+BenchmarkMain-12    	    5307	    225775 ns/op
+PASS
+ok  	bit_counter_old	5.981s

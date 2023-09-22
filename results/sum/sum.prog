@@ -1,0 +1,60 @@
+stype IntCStream rec x.&{next: int^x, stop: @};
+nats : int -> {IntCStream}
+fun n -> c <- {
+    case c of
+        next:(
+			send c n;
+			d <- spawn (nats (n+1));
+			fwd d c
+        ) stop:(
+			close c
+        )
+} end;
+
+sum : unit -> {IntCStream<-n:IntCStream, m:IntCStream}
+fun u -> r_channel <- {
+    case r_channel of
+    next:(
+        n.next;
+        v1:int <- recv n;
+        m.next;
+        v2:int <- recv m;
+        send r_channel (v1+v2);
+        d_ <- spawn (sum ()) n m;
+        fwd d_ r_channel 
+    ) stop: (
+        n.stop;
+        wait n;
+        m.stop;
+        wait m;
+        close r_channel
+    )
+
+} end;
+
+;; c <- {
+    n <- spawn (nats 0);
+    m <- spawn (nats 20);
+    q <- spawn (sum ()) n m;
+	q.next;
+	x1:int <- recv q;
+	print x1;
+	q.next;
+	x2:int <- recv q;
+	print x2;
+	q.next;
+	x3:int <- recv q;
+	print x3;
+	q.next;
+	x4:int <- recv q;
+	print x4;
+	q.next;
+	x5:int <- recv q;
+	print x5;
+	q.next;
+	x6:int <- recv q;
+	print x6;
+	q.stop;
+	wait q;
+	close c
+};;

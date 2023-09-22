@@ -1,0 +1,27 @@
+plus_one : int -> {int ^ @}
+fun n -> c <- {
+    send c (n+1);
+    close c
+}
+end;
+
+foo: unit ->{int ^ int ^ @}
+fun u -> c <- {
+    d <- spawn (
+        d <- {  send d 0; 
+                x <- spawn (plus_one 1);
+                fwd x d
+            }
+    );
+    fwd d c
+} end;
+
+;;c <- {
+	d <- spawn (foo());
+    x:int <- recv d;
+    print x;
+    x1:int <- recv d;
+    print x1;
+    wait d;
+	close c
+};;

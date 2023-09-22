@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: fibbonacci-128_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	    5559	    203785 ns/op
+BenchmarkMain-12    	    5714	    201000 ns/op
+BenchmarkMain-12    	    5710	    201184 ns/op
+BenchmarkMain-12    	    5522	    202898 ns/op
+BenchmarkMain-12    	    5712	    203636 ns/op
+PASS
+ok  	fibbonacci-128_mine	5.829s

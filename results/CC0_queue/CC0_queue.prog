@@ -1,0 +1,63 @@
+stype Queue rec x. &{enq: int => x, deq: +{some: int ^ x, none: @}};
+
+elem : int -> {Queue <- r:Queue}
+fun x -> 
+	q <- {
+		case q of 
+		enq:(
+			y:int <- recv q;
+			r.enq; send r y;
+			q_ <- spawn (elem x) r;
+			fwd q_ q
+		)
+		deq:(
+			q.some; send q x;
+			fwd r q 
+		)
+	}
+end;
+
+empty : unit -> {Queue}
+fun u -> 
+	q <- {
+		case q of
+		enq:(
+			y:int <- recv q;
+			print y;
+			e <- spawn (empty ());
+			q_ <- spawn (elem y) e;
+			fwd q_ q
+		)
+		deq:(
+			q.none;
+			close q
+		)
+	}
+end;
+
+dealloc : unit -> {@ <- q:Queue}
+fun u -> 
+	c <- { 
+		q.deq; 
+		case q of 
+		some:(
+			i:int <- recv q;
+			d <- spawn (dealloc ()) q;
+			fwd d c
+		)
+		none:(
+			wait q;
+			close c
+		)
+	}
+end;
+
+;; c <- {
+	q <- spawn (empty ());
+	q.enq; send q 1;
+	q.enq; send q 2;
+	q.enq; send q 3;
+	d <- spawn (dealloc ()) q;
+	wait d;
+	close c
+};;	

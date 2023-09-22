@@ -1,0 +1,52 @@
+partial_solve : int->int->int
+fun a b -> 
+	a * b 
+end;
+solve : int->int->int->int->int
+fun a b c d ->
+	a + b + c + d 
+end;
+worker : unit -> {int => int => int ^ @} 
+fun u -> 
+  w <- { 
+    low:int <- recv w;
+    high:int <- recv w;
+    send w (partial_solve low high);
+    close w 
+  } 
+end;
+master : int -> {int  ^ @}
+fun x -> 
+  c <- {
+    w1 <- spawn (worker ());
+    w2 <- spawn (worker ());
+    w3 <- spawn (worker ());
+    w4 <- spawn (worker ());
+
+    send w1 0; 
+    send w1 (x / 4);
+    send w2 (x / 4); 
+    send w2 (x / 2);
+    send w3 (x / 2); 
+    send w3 (3 * x / 4);
+    send w4 (3 * x / 4); 
+    send w4 x;
+
+    res1:int <- recv w1; wait w1;
+    res2:int <- recv w2; wait w2;
+    res3:int <- recv w3; wait w3;
+    res4:int <- recv w4; wait w4;
+
+    send c (solve res1 res2 res3 res4);
+    close c
+  }
+end;
+;;
+  c <- {
+    d <- spawn (master 16);
+    res:int <- recv d;
+    print res;
+    wait d;
+    close c
+}
+;;

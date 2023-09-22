@@ -1,0 +1,94 @@
+stype IntList rec x. +{null: @, cons: int ^ (x) * @};
+null : unit -> {IntList}
+fun n -> 
+	c <- {
+		c.null;
+		close c
+	}
+end;
+
+cons : int -> {IntList <- l:IntList}
+fun v -> 
+	c <- {
+		c.cons;
+		send c v;
+		l_ <- spawn { fwd l l_ } l;
+		sendc c l_;
+		close c
+	}
+end;
+
+doMap : unit -> {IntList <- l:IntList, r:IntList}
+fun u -> c <- {
+	case l of 
+	null:(
+		wait l;
+		fwd r c
+	)
+	cons:(
+		n:int <- recv l;
+		l_:IntList <- recvc l;
+		wait l;
+		r_ <- spawn (cons (n*2 +1)) r;
+		d <- spawn (doMap ()) l_ r_;
+		fwd d c
+	)
+} end;
+
+reduce : int -> {@ <- l:IntList}
+fun acc -> c <- {
+	case l of 
+	null:(
+		print acc;
+		wait l;
+		close c
+	)
+	cons:(
+		n:int <- recv l;
+		l_:IntList <- recvc l;
+		wait l;
+		d <- spawn (reduce (acc+n))  l_;
+		fwd d c
+	)
+}end;
+
+dealloc : unit -> {@ <- l:IntList}
+fun v ->
+c <- {
+	case l of 
+	null:(
+		wait l; 
+		close c
+	)
+	cons:(
+		n:int <- recv l; 
+		l_:IntList <- recvc l; 
+		wait l; 
+		d <- spawn (dealloc ()) l_;
+		fwd d c
+	)
+ }end;
+
+;; c <- 
+{	e0 <- spawn (null ()); 
+	e1 <- spawn (cons 1) e0;
+	e2 <- spawn (cons 2) e1;
+	e3 <- spawn (cons 3) e2;
+	m <- spawn (null ()); 
+	doMapC <- spawn (doMap ()) e3 m;
+	result  <- spawn (reduce 0) doMapC;
+   	wait result;
+
+	l1 <- spawn (null ()); 
+	l2 <- spawn (cons 2) l1;
+	l3 <- spawn (cons 4) l2;
+	l4 <- spawn (cons 8) l3;
+	l5 <- spawn (cons 16) l4;
+	l6 <- spawn (cons 32) l5;
+	m1 <- spawn (null ()); 
+	map1 <- spawn (doMap ()) l6 m1;
+	r  <- spawn (reduce 0) map1;
+   	wait r;
+	
+	close c
+};;

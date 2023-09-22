@@ -1,0 +1,11 @@
+stype IntStream rec x. int ^ x;
+nats : int -> {IntStream}
+fun n -> c <- {
+	send c n;
+	print n;
+	d <- spawn (nats (n+1));
+	fwd d c 
+} end;
+;; c <- {
+	close c
+};;

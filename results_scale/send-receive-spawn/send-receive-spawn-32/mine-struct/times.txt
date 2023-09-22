@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send-receive-spawn-32_mine-struct
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	   83428	     14779 ns/op
+BenchmarkMain-12    	   78426	     15377 ns/op
+BenchmarkMain-12    	   80008	     14862 ns/op
+BenchmarkMain-12    	   76437	     15059 ns/op
+BenchmarkMain-12    	   81278	     14580 ns/op
+PASS
+ok  	send-receive-spawn-32_mine-struct	6.734s

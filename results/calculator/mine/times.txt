@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: calculator_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  208429	      5887 ns/op
+BenchmarkMain-12    	  239694	      5821 ns/op
+BenchmarkMain-12    	  251502	      5202 ns/op
+BenchmarkMain-12    	  245091	      5392 ns/op
+BenchmarkMain-12    	  243242	      5205 ns/op
+PASS
+ok  	calculator_mine	11.723s

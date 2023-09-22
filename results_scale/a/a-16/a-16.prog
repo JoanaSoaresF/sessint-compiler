@@ -1,0 +1,81 @@
+plus_one : int -> {int ^ @}
+fun n -> c <- {
+    send c (n+1);
+    close c
+}
+end;
+
+plus_two : int -> {int ^ @}
+fun n -> c <- {
+    d <- spawn (plus_one (n+1));
+    fwd d c
+}
+end;
+
+;; m <- {
+d1d <- spawn (plus_two 1);
+    a1:int <- recv d1d;
+    print a1;
+    wait d1d;
+d2d <- spawn (plus_two 2);
+    a2:int <- recv d2d;
+    print a2;
+    wait d2d;
+d3d <- spawn (plus_two 3);
+    a3:int <- recv d3d;
+    print a3;
+    wait d3d;
+d4d <- spawn (plus_two 4);
+    a4:int <- recv d4d;
+    print a4;
+    wait d4d;
+d5d <- spawn (plus_two 5);
+    a5:int <- recv d5d;
+    print a5;
+    wait d5d;
+d6d <- spawn (plus_two 6);
+    a6:int <- recv d6d;
+    print a6;
+    wait d6d;
+d7d <- spawn (plus_two 7);
+    a7:int <- recv d7d;
+    print a7;
+    wait d7d;
+d8d <- spawn (plus_two 8);
+    a8:int <- recv d8d;
+    print a8;
+    wait d8d;
+d9d <- spawn (plus_two 9);
+    a9:int <- recv d9d;
+    print a9;
+    wait d9d;
+d10d <- spawn (plus_two 10);
+    a10:int <- recv d10d;
+    print a10;
+    wait d10d;
+d11d <- spawn (plus_two 11);
+    a11:int <- recv d11d;
+    print a11;
+    wait d11d;
+d12d <- spawn (plus_two 12);
+    a12:int <- recv d12d;
+    print a12;
+    wait d12d;
+d13d <- spawn (plus_two 13);
+    a13:int <- recv d13d;
+    print a13;
+    wait d13d;
+d14d <- spawn (plus_two 14);
+    a14:int <- recv d14d;
+    print a14;
+    wait d14d;
+d15d <- spawn (plus_two 15);
+    a15:int <- recv d15d;
+    print a15;
+    wait d15d;
+d16d <- spawn (plus_two 16);
+    a16:int <- recv d16d;
+    print a16;
+    wait d16d;
+close m
+};;

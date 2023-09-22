@@ -1,0 +1,31 @@
+stype Calculator rec x. &{add: int=>int=>int^x, sub: int=>int=>int^x, mul: int=>int=>int^x, div: int=>int=>int^x, stop: @};
+calc : unit -> {Calculator}
+fun u -> c <- {	
+	case c of
+	add:(
+		a:int <- recv c;
+		b:int <- recv c;
+		send c a+b;
+		d <- spawn (calc ());
+		fwd d c)
+	sub:(
+		a:int <- recv c;
+		b:int <- recv c;
+		send c a-b;
+		d <- spawn (calc ());
+		fwd d c)
+	mul:(
+		a:int <- recv c;
+		b:int <- recv c;
+		send c a*b;
+		d <- spawn (calc ());
+		fwd d c)
+	div:(
+		a:int <- recv c;
+		b:int <- recv c;
+		send c a/b;
+		d <- spawn (calc ());
+		fwd d c)
+	stop:(close c)
+} end;
+;; c <- {d <- spawn (calc ()); d.add; send d 3; send d 4; v:int <- recv d; print v; d.stop; wait d; close c};;

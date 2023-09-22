@@ -1,0 +1,24 @@
+Estimated testing time 20s (2 benchmarks x 10s). Change using '-quota'.
+┌──────────────────────────┬────────────────┬──────────┬─────────┬───────────┬──────────┬────────────┬─────────┐
+│ Name                     │ Runs @ Samples │ Time/Run │ mWd/Run │  mjWd/Run │ Prom/Run │ Percentage │ Speedup │
+├──────────────────────────┼────────────────┼──────────┼─────────┼───────────┼──────────┼────────────┼─────────┤
+│ Compiler sem otimizações │     5043 @ 550 │   8.53us │  2.29kw │   957.87w │    1.23w │    100.00% │    1.03 │
+│ Compiler com otimizações │     5565 @ 560 │   8.31us │  2.35kw │ 1_482.93w │    1.79w │     97.41% │    1.00 │
+└──────────────────────────┴────────────────┴──────────┴─────────┴───────────┴──────────┴────────────┴─────────┘
+Estimated testing time 20s (2 benchmarks x 10s). Change using '-quota'.
+┌──────────────────────────┬────────────────┬──────────┬─────────┬───────────┬──────────┬────────────┬─────────┐
+│ Name                     │ Runs @ Samples │ Time/Run │ mWd/Run │  mjWd/Run │ Prom/Run │ Percentage │ Speedup │
+├──────────────────────────┼────────────────┼──────────┼─────────┼───────────┼──────────┼────────────┼─────────┤
+│ Compiler sem otimizações │     5402 @ 557 │   7.94us │  2.29kw │   809.30w │    1.22w │    100.00% │    1.03 │
+│ Compiler com otimizações │     5565 @ 560 │   7.69us │  2.35kw │ 1_344.88w │    1.79w │     96.83% │    1.00 │
+└──────────────────────────┴────────────────┴──────────┴─────────┴───────────┴──────────┴────────────┴─────────┘
+Estimated testing time 20s (2 benchmarks x 10s). Change using '-quota'.
+Estimated testing time 20s (2 benchmarks x 10s). Change using '-quota'.
+Estimated testing time 20s (2 benchmarks x 10s). Change using '-quota'.
+┌──────────────────────────┬────────────────┬──────────┬─────────┬───────────┬──────────┬────────────┬─────────┐
+│ Name                     │ Runs @ Samples │ Time/Run │ mWd/Run │  mjWd/Run │ Prom/Run │ Percentage │ Speedup │
+├──────────────────────────┼────────────────┼──────────┼─────────┼───────────┼──────────┼────────────┼─────────┤
+│ Compiler sem otimizações │     5456 @ 558 │   7.73us │  2.29kw │   789.94w │    1.22w │     98.52% │    1.00 │
+│ Compiler com otimizações │     5456 @ 558 │   7.84us │  2.26kw │ 1_390.31w │    1.76w │    100.00% │    1.02 │
+└──────────────────────────┴────────────────┴──────────┴─────────┴───────────┴──────────┴────────────┴─────────┘
+Estimated testing time 40s (2 benchmarks x 20s). Change using '-quota'.

@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: nats_simple_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	 2272293	       526.0 ns/op
+BenchmarkMain-12    	 2272381	       527.6 ns/op
+BenchmarkMain-12    	 2273440	       531.9 ns/op
+BenchmarkMain-12    	 2288314	       529.5 ns/op
+BenchmarkMain-12    	 2258479	       535.0 ns/op
+PASS
+ok  	nats_simple_old	8.701s

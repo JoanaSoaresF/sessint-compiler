@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: receive-send_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  416649	      2755 ns/op
+BenchmarkMain-12    	  427827	      2731 ns/op
+BenchmarkMain-12    	  428691	      2749 ns/op
+BenchmarkMain-12    	  419608	      2756 ns/op
+BenchmarkMain-12    	  423403	      2773 ns/op
+PASS
+ok  	receive-send_mine	5.978s

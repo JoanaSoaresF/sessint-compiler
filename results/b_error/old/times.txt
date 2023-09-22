@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: b_error_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  560910	      2082 ns/op
+BenchmarkMain-12    	  574638	      2157 ns/op
+BenchmarkMain-12    	  544579	      2080 ns/op
+BenchmarkMain-12    	  560277	      2115 ns/op
+BenchmarkMain-12    	  550834	      2130 ns/op
+PASS
+ok  	b_error_old	6.016s

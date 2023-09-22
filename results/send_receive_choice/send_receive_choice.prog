@@ -1,0 +1,42 @@
+stype PrintWhat &{plus_n: @, plus_one: @};
+
+send_three : int -> {int ^ int ^ int ^ @}
+fun n -> c <- {
+   send c n;
+   send c (n+1);
+   send c (n+2);
+   close c
+}
+end;
+
+print_three : int -> {PrintWhat}
+fun n -> c <- {
+    p <- spawn (send_three n);
+    a1:int <- recv p;
+    print (a1 + n);
+    case c of 
+    plus_n : (
+        a2:int <- recv p;
+        print a2;
+        a3:int <- recv p;
+        print a3;
+        wait p;
+        close c
+    )
+    plus_one : (
+        b1:int <- recv p;
+        print (b1+1);
+        b2:int <- recv p;
+        print (b2+1);
+        wait p;
+        close c
+    )  
+}
+end;
+
+;; m <- {
+    e <- spawn (print_three 1);
+	e.plus_n;
+    wait e;
+    close m
+};;

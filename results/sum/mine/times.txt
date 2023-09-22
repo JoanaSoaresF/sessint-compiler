@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: sum_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	   40424	     28414 ns/op
+BenchmarkMain-12    	   50774	     26685 ns/op
+BenchmarkMain-12    	   50323	     28436 ns/op
+BenchmarkMain-12    	   50288	     24450 ns/op
+BenchmarkMain-12    	   49845	     24040 ns/op
+PASS
+ok  	sum_mine	11.071s

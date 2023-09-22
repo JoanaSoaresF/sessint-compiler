@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send_receive_separated_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  202466	      5558 ns/op
+BenchmarkMain-12    	  214512	      5431 ns/op
+BenchmarkMain-12    	  216651	      5454 ns/op
+BenchmarkMain-12    	  218053	      5480 ns/op
+BenchmarkMain-12    	  217856	      5412 ns/op
+PASS
+ok  	send_receive_separated_mine	6.140s

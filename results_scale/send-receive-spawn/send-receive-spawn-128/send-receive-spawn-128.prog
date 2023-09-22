@@ -1,0 +1,524 @@
+send_ints : int -> {
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+ @}
+fun n -> c <- {
+send c (n + 1);
+send c (n + 2);
+send c (n + 3);
+send c (n + 4);
+send c (n + 5);
+send c (n + 6);
+send c (n + 7);
+send c (n + 8);
+send c (n + 9);
+send c (n + 10);
+send c (n + 11);
+send c (n + 12);
+send c (n + 13);
+send c (n + 14);
+send c (n + 15);
+send c (n + 16);
+send c (n + 17);
+send c (n + 18);
+send c (n + 19);
+send c (n + 20);
+send c (n + 21);
+send c (n + 22);
+send c (n + 23);
+send c (n + 24);
+send c (n + 25);
+send c (n + 26);
+send c (n + 27);
+send c (n + 28);
+send c (n + 29);
+send c (n + 30);
+send c (n + 31);
+send c (n + 32);
+send c (n + 33);
+send c (n + 34);
+send c (n + 35);
+send c (n + 36);
+send c (n + 37);
+send c (n + 38);
+send c (n + 39);
+send c (n + 40);
+send c (n + 41);
+send c (n + 42);
+send c (n + 43);
+send c (n + 44);
+send c (n + 45);
+send c (n + 46);
+send c (n + 47);
+send c (n + 48);
+send c (n + 49);
+send c (n + 50);
+send c (n + 51);
+send c (n + 52);
+send c (n + 53);
+send c (n + 54);
+send c (n + 55);
+send c (n + 56);
+send c (n + 57);
+send c (n + 58);
+send c (n + 59);
+send c (n + 60);
+send c (n + 61);
+send c (n + 62);
+send c (n + 63);
+send c (n + 64);
+send c (n + 65);
+send c (n + 66);
+send c (n + 67);
+send c (n + 68);
+send c (n + 69);
+send c (n + 70);
+send c (n + 71);
+send c (n + 72);
+send c (n + 73);
+send c (n + 74);
+send c (n + 75);
+send c (n + 76);
+send c (n + 77);
+send c (n + 78);
+send c (n + 79);
+send c (n + 80);
+send c (n + 81);
+send c (n + 82);
+send c (n + 83);
+send c (n + 84);
+send c (n + 85);
+send c (n + 86);
+send c (n + 87);
+send c (n + 88);
+send c (n + 89);
+send c (n + 90);
+send c (n + 91);
+send c (n + 92);
+send c (n + 93);
+send c (n + 94);
+send c (n + 95);
+send c (n + 96);
+send c (n + 97);
+send c (n + 98);
+send c (n + 99);
+send c (n + 100);
+send c (n + 101);
+send c (n + 102);
+send c (n + 103);
+send c (n + 104);
+send c (n + 105);
+send c (n + 106);
+send c (n + 107);
+send c (n + 108);
+send c (n + 109);
+send c (n + 110);
+send c (n + 111);
+send c (n + 112);
+send c (n + 113);
+send c (n + 114);
+send c (n + 115);
+send c (n + 116);
+send c (n + 117);
+send c (n + 118);
+send c (n + 119);
+send c (n + 120);
+send c (n + 121);
+send c (n + 122);
+send c (n + 123);
+send c (n + 124);
+send c (n + 125);
+send c (n + 126);
+send c (n + 127);
+send c (n + 128);
+ close c
+}
+end;
+
+;; m <- {
+    e <- spawn (send_ints 1);
+a1:int <- recv e;
+    print a1;
+a2:int <- recv e;
+    print a2;
+a3:int <- recv e;
+    print a3;
+a4:int <- recv e;
+    print a4;
+a5:int <- recv e;
+    print a5;
+a6:int <- recv e;
+    print a6;
+a7:int <- recv e;
+    print a7;
+a8:int <- recv e;
+    print a8;
+a9:int <- recv e;
+    print a9;
+a10:int <- recv e;
+    print a10;
+a11:int <- recv e;
+    print a11;
+a12:int <- recv e;
+    print a12;
+a13:int <- recv e;
+    print a13;
+a14:int <- recv e;
+    print a14;
+a15:int <- recv e;
+    print a15;
+a16:int <- recv e;
+    print a16;
+a17:int <- recv e;
+    print a17;
+a18:int <- recv e;
+    print a18;
+a19:int <- recv e;
+    print a19;
+a20:int <- recv e;
+    print a20;
+a21:int <- recv e;
+    print a21;
+a22:int <- recv e;
+    print a22;
+a23:int <- recv e;
+    print a23;
+a24:int <- recv e;
+    print a24;
+a25:int <- recv e;
+    print a25;
+a26:int <- recv e;
+    print a26;
+a27:int <- recv e;
+    print a27;
+a28:int <- recv e;
+    print a28;
+a29:int <- recv e;
+    print a29;
+a30:int <- recv e;
+    print a30;
+a31:int <- recv e;
+    print a31;
+a32:int <- recv e;
+    print a32;
+a33:int <- recv e;
+    print a33;
+a34:int <- recv e;
+    print a34;
+a35:int <- recv e;
+    print a35;
+a36:int <- recv e;
+    print a36;
+a37:int <- recv e;
+    print a37;
+a38:int <- recv e;
+    print a38;
+a39:int <- recv e;
+    print a39;
+a40:int <- recv e;
+    print a40;
+a41:int <- recv e;
+    print a41;
+a42:int <- recv e;
+    print a42;
+a43:int <- recv e;
+    print a43;
+a44:int <- recv e;
+    print a44;
+a45:int <- recv e;
+    print a45;
+a46:int <- recv e;
+    print a46;
+a47:int <- recv e;
+    print a47;
+a48:int <- recv e;
+    print a48;
+a49:int <- recv e;
+    print a49;
+a50:int <- recv e;
+    print a50;
+a51:int <- recv e;
+    print a51;
+a52:int <- recv e;
+    print a52;
+a53:int <- recv e;
+    print a53;
+a54:int <- recv e;
+    print a54;
+a55:int <- recv e;
+    print a55;
+a56:int <- recv e;
+    print a56;
+a57:int <- recv e;
+    print a57;
+a58:int <- recv e;
+    print a58;
+a59:int <- recv e;
+    print a59;
+a60:int <- recv e;
+    print a60;
+a61:int <- recv e;
+    print a61;
+a62:int <- recv e;
+    print a62;
+a63:int <- recv e;
+    print a63;
+a64:int <- recv e;
+    print a64;
+a65:int <- recv e;
+    print a65;
+a66:int <- recv e;
+    print a66;
+a67:int <- recv e;
+    print a67;
+a68:int <- recv e;
+    print a68;
+a69:int <- recv e;
+    print a69;
+a70:int <- recv e;
+    print a70;
+a71:int <- recv e;
+    print a71;
+a72:int <- recv e;
+    print a72;
+a73:int <- recv e;
+    print a73;
+a74:int <- recv e;
+    print a74;
+a75:int <- recv e;
+    print a75;
+a76:int <- recv e;
+    print a76;
+a77:int <- recv e;
+    print a77;
+a78:int <- recv e;
+    print a78;
+a79:int <- recv e;
+    print a79;
+a80:int <- recv e;
+    print a80;
+a81:int <- recv e;
+    print a81;
+a82:int <- recv e;
+    print a82;
+a83:int <- recv e;
+    print a83;
+a84:int <- recv e;
+    print a84;
+a85:int <- recv e;
+    print a85;
+a86:int <- recv e;
+    print a86;
+a87:int <- recv e;
+    print a87;
+a88:int <- recv e;
+    print a88;
+a89:int <- recv e;
+    print a89;
+a90:int <- recv e;
+    print a90;
+a91:int <- recv e;
+    print a91;
+a92:int <- recv e;
+    print a92;
+a93:int <- recv e;
+    print a93;
+a94:int <- recv e;
+    print a94;
+a95:int <- recv e;
+    print a95;
+a96:int <- recv e;
+    print a96;
+a97:int <- recv e;
+    print a97;
+a98:int <- recv e;
+    print a98;
+a99:int <- recv e;
+    print a99;
+a100:int <- recv e;
+    print a100;
+a101:int <- recv e;
+    print a101;
+a102:int <- recv e;
+    print a102;
+a103:int <- recv e;
+    print a103;
+a104:int <- recv e;
+    print a104;
+a105:int <- recv e;
+    print a105;
+a106:int <- recv e;
+    print a106;
+a107:int <- recv e;
+    print a107;
+a108:int <- recv e;
+    print a108;
+a109:int <- recv e;
+    print a109;
+a110:int <- recv e;
+    print a110;
+a111:int <- recv e;
+    print a111;
+a112:int <- recv e;
+    print a112;
+a113:int <- recv e;
+    print a113;
+a114:int <- recv e;
+    print a114;
+a115:int <- recv e;
+    print a115;
+a116:int <- recv e;
+    print a116;
+a117:int <- recv e;
+    print a117;
+a118:int <- recv e;
+    print a118;
+a119:int <- recv e;
+    print a119;
+a120:int <- recv e;
+    print a120;
+a121:int <- recv e;
+    print a121;
+a122:int <- recv e;
+    print a122;
+a123:int <- recv e;
+    print a123;
+a124:int <- recv e;
+    print a124;
+a125:int <- recv e;
+    print a125;
+a126:int <- recv e;
+    print a126;
+a127:int <- recv e;
+    print a127;
+a128:int <- recv e;
+    print a128;
+ wait e;
+    close m
+};;

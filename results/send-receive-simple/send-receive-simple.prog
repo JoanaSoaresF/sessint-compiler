@@ -1,0 +1,62 @@
+;;c <- {
+	d <- spawn {
+		v1:int <- recv d;
+		v2:int <- recv d;
+		v3:int <- recv d;
+		v4:int <- recv d;
+		v5:int <- recv d;
+		v6:int <- recv d;
+		v7:int <- recv d;
+		v8:int <- recv d;
+		v9:int <- recv d;
+		v10:int <- recv d;
+		
+		send d v1;
+		send d v2;
+		send d v3;
+		send d v4;
+		send d v5;
+		send d v6;
+		send d v7;
+		send d v8;
+		send d v9;
+		send d v10;
+
+		close d
+	};
+	send d 1;
+	send d 2;
+	send d 3;
+	send d 4;
+	send d 5;
+	send d 6;
+	send d 7;
+	send d 8;
+	send d 9;
+	send d 10;
+	
+	v1:int <- recv d;
+	print v1;
+	v2:int <- recv d;
+	print v2;
+	v3:int <- recv d;
+	print v3;
+	v4:int <- recv d;
+	print v4;
+	v5:int <- recv d;
+	print v5;
+	v6:int <- recv d;
+	print v6;
+	v7:int <- recv d;
+	print v7;
+	v8:int <- recv d;
+	print v8;
+	v9:int <- recv d;
+	print v9;
+	v10:int <- recv d;
+	print v10;
+	
+	print 0;
+	wait d;
+	close c
+};;

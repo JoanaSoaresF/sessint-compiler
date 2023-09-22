@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send_receive_separated_mine-struct
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  229875	      5141 ns/op
+BenchmarkMain-12    	  235508	      5108 ns/op
+BenchmarkMain-12    	  226693	      5115 ns/op
+BenchmarkMain-12    	  237015	      5133 ns/op
+BenchmarkMain-12    	  221270	      5165 ns/op
+PASS
+ok  	send_receive_separated_mine-struct	6.178s

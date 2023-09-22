@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send_receive_two_functions_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  330738	      3676 ns/op
+BenchmarkMain-12    	  316130	      3520 ns/op
+BenchmarkMain-12    	  336952	      3473 ns/op
+BenchmarkMain-12    	  340464	      3500 ns/op
+BenchmarkMain-12    	  338724	      3476 ns/op
+PASS
+ok  	send_receive_two_functions_mine	6.061s

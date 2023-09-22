@@ -1,0 +1,20 @@
+send_ints : int -> {int ^ int ^ int ^ @}
+fun n -> c <- {
+   send c n;
+   send c (n+1);
+   send c (n+2);
+   close c
+}
+end;
+
+;; m <- {
+    e <- spawn (send_ints 1);
+    a1:int <- recv e;
+    print a1;
+    a2:int <- recv e;
+    print a2;
+    a3:int <- recv e;
+    print a3;
+    wait e;
+    close m
+};;

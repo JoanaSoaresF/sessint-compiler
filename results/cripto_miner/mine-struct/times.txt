@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: cripto_miner_mine-struct
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  174710	      6671 ns/op
+BenchmarkMain-12    	  178602	      6623 ns/op
+BenchmarkMain-12    	  180585	      6668 ns/op
+BenchmarkMain-12    	  176407	      6641 ns/op
+BenchmarkMain-12    	  181119	      6699 ns/op
+PASS
+ok  	cripto_miner_mine-struct	6.287s

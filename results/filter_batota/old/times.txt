@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: filter_batota_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	   22072	     54945 ns/op
+BenchmarkMain-12    	   22016	     54138 ns/op
+BenchmarkMain-12    	   22018	     54176 ns/op
+BenchmarkMain-12    	   22028	     55536 ns/op
+BenchmarkMain-12    	   22233	     54199 ns/op
+PASS
+ok  	filter_batota_old	8.784s

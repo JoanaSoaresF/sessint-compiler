@@ -1,0 +1,14 @@
+;;c <- {
+	d <- spawn {
+		v1:int <- recv d;
+		send d v1;
+		close d
+	};
+	send d 1;
+	
+	v1:int <- recv d;
+	
+	print 0;
+	wait d;
+	close c
+};;

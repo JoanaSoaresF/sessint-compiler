@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send-receive-spwan_mine
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  395239	      2943 ns/op
+BenchmarkMain-12    	  397329	      2970 ns/op
+BenchmarkMain-12    	  347198	      3127 ns/op
+BenchmarkMain-12    	  388113	      2970 ns/op
+BenchmarkMain-12    	  407756	      3051 ns/op
+PASS
+ok  	send-receive-spwan_mine	5.993s

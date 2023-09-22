@@ -1,0 +1,140 @@
+send_ints : int -> {
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+int ^ 
+ @}
+fun n -> c <- {
+send c (n + 1);
+send c (n + 2);
+send c (n + 3);
+send c (n + 4);
+send c (n + 5);
+send c (n + 6);
+send c (n + 7);
+send c (n + 8);
+send c (n + 9);
+send c (n + 10);
+send c (n + 11);
+send c (n + 12);
+send c (n + 13);
+send c (n + 14);
+send c (n + 15);
+send c (n + 16);
+send c (n + 17);
+send c (n + 18);
+send c (n + 19);
+send c (n + 20);
+send c (n + 21);
+send c (n + 22);
+send c (n + 23);
+send c (n + 24);
+send c (n + 25);
+send c (n + 26);
+send c (n + 27);
+send c (n + 28);
+send c (n + 29);
+send c (n + 30);
+send c (n + 31);
+send c (n + 32);
+ close c
+}
+end;
+
+;; m <- {
+    e <- spawn (send_ints 1);
+a1:int <- recv e;
+    print a1;
+a2:int <- recv e;
+    print a2;
+a3:int <- recv e;
+    print a3;
+a4:int <- recv e;
+    print a4;
+a5:int <- recv e;
+    print a5;
+a6:int <- recv e;
+    print a6;
+a7:int <- recv e;
+    print a7;
+a8:int <- recv e;
+    print a8;
+a9:int <- recv e;
+    print a9;
+a10:int <- recv e;
+    print a10;
+a11:int <- recv e;
+    print a11;
+a12:int <- recv e;
+    print a12;
+a13:int <- recv e;
+    print a13;
+a14:int <- recv e;
+    print a14;
+a15:int <- recv e;
+    print a15;
+a16:int <- recv e;
+    print a16;
+a17:int <- recv e;
+    print a17;
+a18:int <- recv e;
+    print a18;
+a19:int <- recv e;
+    print a19;
+a20:int <- recv e;
+    print a20;
+a21:int <- recv e;
+    print a21;
+a22:int <- recv e;
+    print a22;
+a23:int <- recv e;
+    print a23;
+a24:int <- recv e;
+    print a24;
+a25:int <- recv e;
+    print a25;
+a26:int <- recv e;
+    print a26;
+a27:int <- recv e;
+    print a27;
+a28:int <- recv e;
+    print a28;
+a29:int <- recv e;
+    print a29;
+a30:int <- recv e;
+    print a30;
+a31:int <- recv e;
+    print a31;
+a32:int <- recv e;
+    print a32;
+ wait e;
+    close m
+};;

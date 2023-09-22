@@ -1,0 +1,69 @@
+stype IntCStream rec x.&{next: int^x, stop: @};
+stype IntOddStream rec x.&{next: +{odd: int ^ x, even: x}, stop: @};
+nats : int -> {IntCStream}
+fun n -> c <- {
+    case c of
+        next:(
+			send c n;
+			d <- spawn (nats (n+1));
+			fwd d c
+        ) stop:(
+			close c
+        )
+} end;
+
+is_odd : int -> bool
+fun i ->
+not(i - (2 *( i/2))=0)
+end;
+
+filter :  unit -> {IntCStream <- n_channel:IntCStream}
+fun u -> r_channel <- {
+	case r_channel of 
+		next:(
+			n_channel.next;
+			v:int <- recv n_channel;
+			if (is_odd v) then
+				send r_channel v;
+				d_ <- spawn (filter ()) n_channel;
+				fwd d_ r_channel
+			else 
+				n_channel.next;
+				v1:int <- recv n_channel;
+				send r_channel v1;
+				d_ <- spawn (filter ()) n_channel;
+				fwd d_ r_channel
+
+		) stop:(
+			n_channel.stop;	
+			wait n_channel;
+			close r_channel
+		)
+} end;
+
+;;
+c <- {
+	d <- spawn (nats 0);
+	q <- spawn (filter ()) d;
+	q.next;
+	x1:int <- recv q;
+	print x1;
+	q.next;
+	x2:int <- recv q;
+	print x2;
+	q.next;
+	x3:int <- recv q;
+	print x3;
+	q.next;
+	x4:int <- recv q;
+	print x4;
+	q.next;
+	x5:int <- recv q;
+	print x5;
+	q.next;
+	x6:int <- recv q;
+	print x6;
+	q.stop;
+	wait q;
+	close c
+};;

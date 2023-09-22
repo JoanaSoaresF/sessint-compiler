@@ -1,0 +1,11 @@
+goos: linux
+goarch: amd64
+pkg: send-receive-spawn-16_old
+cpu: Intel(R) Core(TM) i5-10400T CPU @ 2.00GHz
+BenchmarkMain-12    	  103598	     11627 ns/op
+BenchmarkMain-12    	  103492	     11592 ns/op
+BenchmarkMain-12    	  103660	     11407 ns/op
+BenchmarkMain-12    	  104854	     11379 ns/op
+BenchmarkMain-12    	  103992	     11432 ns/op
+PASS
+ok  	send-receive-spawn-16_old	6.561s
