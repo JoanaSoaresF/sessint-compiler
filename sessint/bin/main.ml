@@ -29,7 +29,7 @@ let compile_with_optimizations program_name prog multisend_struct =
 
      let desugared_prog = Syntax.desugar_prog prog in
      let decls, e, _ty = Typechecker.check_program desugared_prog in
-     let prog = Preprocessor.optimize_representation (Prog (decls, e)) in
+     let prog = Optimizations.optimize_representation (Prog (decls, e)) in
      Compiler.compile_prog prog single_channel multisend_struct !compile_times filename
    with   End_of_file -> ()
    | Printer.TError ex -> print_endline @@ Printer.string_from_err ex)
