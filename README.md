@@ -1,6 +1,6 @@
 # sessint-compiler
 
-Session types compiler - Master Thesis
+Session types compiler - Master Dissertation
 
 Abstract:
 Concurrent programming has grown significantly in popularity thanks to the increased demands for availability and responsiveness placed on software systems to accommodate expanding end-user populations.
